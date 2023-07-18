@@ -61,12 +61,14 @@ const flatten = getArray => {
     }
   } // end for loop 1
   // Print and return the new flattened array
-  console.log(flattenArray);
+  // console.log(flattenArray);
   return flattenArray;
 } // end function
 
 // Test cases
-flatten([1, 2, [3, 4], 5, [6]]); // => [1, 2, 3, 4, 5, 6]
-flatten([1, [2, [3, [4]], 5]]); // => [1, 2, [3, [4]], 5] 
+console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
+console.log(flatten([1, [2, [3, [4]], 5]])); // => [1, 2, [3, [4]], 5] 
 
 // TEST CODE
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+// assertArraysEqual(flatten([1, [2, [3, [4]], 5]]), [1, 2, [3, [4]], 5]);
