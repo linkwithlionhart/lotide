@@ -8,19 +8,15 @@ const assertEqual = function (actual, expected) {
 } // end function: assertEqual
 
 const eqArrays = (arr1, arr2) => {
-  // First, check if the arrays have the same length
   if (arr1.length !== arr2.length) {
-      return false;
+    return false;
   }
-  
   // Next, check each pair of elements
   for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-          return false;
-      }
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
   }
-  
-  // If we haven't returned false yet, then the arrays must be equal
   return true;
 } // end function: eqArrays
 
@@ -28,9 +24,7 @@ const eqArrays = (arr1, arr2) => {
 const eqObjects = function(object1, object2) {
   // Setup input
   const keyArray1 = Object.keys(object1);
-  const valArray1 = Object.values(object1);
   const keyArray2 = Object.keys(object2);
-  const valArray2 = Object.values(object2);
   
   // Process
   // P1: Compare length
