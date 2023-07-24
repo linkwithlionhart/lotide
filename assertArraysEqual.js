@@ -7,40 +7,34 @@ const assertEqual = function (actual, expected) {
   }
 };
 
-const eqArrays = (getArray1, getArray2) => {
-  if (getArray1.length !== getArray2.length) {
+const eqArrays = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) {
     return false;
-  } // end if
-
-  for (let x = 0; x < getArray1.length; x++) {
-    for (let y = 0; y < getArray2.length; y++) {
-      if (x === y && getArray1[x] !== getArray2[y]) {
-        return false;
-      } // end if
-    } // end for loop 2
-  } // end for loop 1
-
+  }
+  // Next, check each pair of elements
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
   return true;
-} // end function
+} // end function: eqArrays
 
 // FUNCTION IMPLEMENTATION
-const assertArraysEqual = (getArray1, getArray2) => {
+const assertArraysEqual = (arr1, arr2) => {
   // Take two arrays and print a message
-  if (getArray1.length !== getArray2.length) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${getArray1} !== ${getArray2}`);
+  if (arr1.length !== arr2.length) {
+    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
     return;
   } // end if
-
-  for (let x = 0; x < getArray1.length; x++) {
-    for (let y = 0; y < getArray2.length; y++) {
-      if (x === y && getArray1[x] !== getArray2[y]) {
-        console.log(`🛑🛑🛑 Assertion Failed: ${getArray1} !== ${getArray2}`);
-        return;
-      } // end if
-    } // end for loop 2
-  } // end for loop 1
-
-  console.log(`✅✅✅ Assertion Passed: ${getArray1} === ${getArray2}`);
+  
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
+      return;
+    } // end if
+  } // end for loop
+  console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
 }
 
 // TEST CODE
