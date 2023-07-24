@@ -36,7 +36,7 @@ const eqObjects = function(object1, object2) {
   // P2: Compare key arrays
   for (let key1 of keyArray1) {
     if (!keyArray2.includes(key1)) {
-      console.log(`False key detected: ${key1}.`)
+      // console.log(`False key detected: ${key1}.`)
       return false;
     } // end if
 
