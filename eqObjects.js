@@ -27,40 +27,37 @@ const eqArrays = (arr1, arr2) => {
 // Function: eqObjects()
 const eqObjects = function(object1, object2) {
   // Setup input
-  const compareKeyArray1 = Object.keys(object1);
-  const compareValArray1 = Object.values(object1);
-  const compareKeyArray2 = Object.keys(object2);
-  const compareValArray2 = Object.values(object2);
+  const keyArray1 = Object.keys(object1);
+  const valArray1 = Object.values(object1);
+  const keyArray2 = Object.keys(object2);
+  const valArray2 = Object.values(object2);
+  
   // Process
   // P1: Compare length
-  if (compareKeyArray1.length !== compareKeyArray2.length) {
+  if (keyArray1.length !== keyArray2.length) {
+    // console.log(`Key array length ${keyArray1.length} !== ${keyArray2.length}.`)
     return false;
   } // end if
+  
   // P2: Compare key arrays
-  for (let key1 of compareKeyArray1) {
-    if (compareKeyArray2.includes(key1)) {
-    } else {
+  for (let key1 of keyArray1) {
+    if (!keyArray2.includes(key1)) {
       console.log(`False key detected: ${key1}.`)
       return false;
-    }
-  } // end for 1
+    } // end if
+
   // P3: Compare value arrays
-  for (let val1 of compareValArray1) {
-    if (compareValArray2.includes(val1)) {
-    } else if (Array.isArray(val1)) {
-      // console.log(val1);
-      for (let val2 of compareValArray2) {
-        if (Array.isArray(val2)) {
-          // console.log(val2);
-          // console.log(eqArrays(val1, val2));
-          return eqArrays(val1, val2);
-        } // end if
-      } // end for loop
-    } else {
-      console.log(`False value detected: ${val1}.`);
+    const value1 = object1[key1];
+    const value2 = object2[key1];
+    if (Array.isArray(value1) && Array.isArray(value2)) {
+      if (!eqArrays(value1, value2)) {
+        return false;
+      }
+    } else if (value1 !== value2) {
       return false;
     }
-  }
+  } // end for loop
+  
   // Output: if no false, return true
   return true;
 } // end function: eqObjects
