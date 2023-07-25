@@ -35,7 +35,7 @@ const assertArraysEqual = (arr1, arr2) => {
     } // end if
   } // end for loop
   console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-}
+} // end function: assertArraysEqual
 
 // TEST CODE
 assertArraysEqual([1, 2, 3], [1, 2, 3]); // Expected: Assertion passed
