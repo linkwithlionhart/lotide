@@ -1,3 +1,46 @@
+// FUNCTION IMPLEMENTATION
+const middle = getArray => {
+  if (getArray.length <= 2) {
+    // console.log([]);
+    return [];
+  } else if (getArray.length % 2 !== 0) {
+    let median = ((getArray.length + 1) / 2) - 1; // -1 to adjust for zero-based index
+    // console.log([getArray[median]]);
+    return [getArray[median]];
+  } else if (getArray.length % 2 === 0) {
+    let median1 = (getArray.length / 2) - 1; // -1 to adjust for zero-based index
+    let median2 = ((getArray.length / 2) + 1) - 1; // -1 to adjust for zero-based index
+    // console.log([getArray[median1], getArray[median2]])
+    return [getArray[median1], getArray[median2]];
+  }
+} // end function 
+
+const assertArraysEqual = (arr1, arr2) => {
+  // Using eqArrays to check if arrays are equal
+  if (eqArrays(arr1, arr2)) {
+    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
+  }
+} // end function: assertArraysEqual
+
+const eqArrays = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  // Next, check each pair of elements
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+} // end function: eqArrays
+
+// MODULE: EXPORT
+module.exports = middle;
+
+/* Redacted
 // FUNCTIONS COPIED
 const assertEqual = function (actual, expected) {
   if (actual === expected) {
@@ -42,22 +85,6 @@ const assertArraysEqual = (getArray1, getArray2) => {
   console.log(`✅✅✅ Assertion Passed: ${getArray1} === ${getArray2}`);
 }
 
-// FUNCTION IMPLEMENTATION
-const middle = getArray => {
-  if (getArray.length <= 2) {
-    // console.log([]);
-    return [];
-  } else if (getArray.length % 2 !== 0) {
-    let median = ((getArray.length + 1) / 2) - 1; // -1 to adjust for zero-based index
-    // console.log([getArray[median]]);
-    return [getArray[median]];
-  } else if (getArray.length % 2 === 0) {
-    let median1 = (getArray.length / 2) - 1; // -1 to adjust for zero-based index
-    let median2 = ((getArray.length / 2) + 1) - 1; // -1 to adjust for zero-based index
-    // console.log([getArray[median1], getArray[median2]])
-    return [getArray[median1], getArray[median2]];
-  }
-} // end function 
 
 // TEST CODE
 assertArraysEqual(middle([1]), []);
@@ -73,3 +100,4 @@ middle([1, 2, 3]) // => [2]
 middle([1, 2, 3, 4, 5]) // => [3]
 middle([1, 2, 3, 4]) // => [2, 3]
 middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
+*/
