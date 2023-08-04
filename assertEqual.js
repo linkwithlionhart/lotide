@@ -13,8 +13,7 @@ const assertEqual = function(actual, expected) {
 // MODULE: EXPORT
 module.exports = assertEqual;
 
-/*
-// Outdated
+/* Outdated
 const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
