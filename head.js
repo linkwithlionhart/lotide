@@ -7,8 +7,7 @@ const head = function (getArray) {
 // MODULE: EXPORT
 module.exports = head;
 
-/*
-// Outdated
+/* Outdated
 const head = function (getArray) {
   for (let i = 0; i <= getArray.length; i++) {
     if (getArray[0]) {
