@@ -1,4 +1,29 @@
-// FUNCTIONS COPIED
+// FUNCTION IMPLEMENTATION
+const flatten = getArray => {
+  // Create new flattened array for return
+  const flattenArray = [];
+  // Loop through passed array
+  for (let i = 0; i < getArray.length; i++) {
+    // Detect if an array is in the passed array
+    if (Array.isArray(getArray[i])) {
+      // Loop through the detected array and push to flatten array
+      for (let j = 0; j < getArray[i].length; j++) {
+        flattenArray.push(getArray[i][j]);
+      } // end for loop 2
+    // Anything that is not an array is still pushed to new flattened array
+    } else {
+      flattenArray.push(getArray[i]);
+    }
+  } // end for loop 1
+  // Print and return the new flattened array
+  // console.log(flattenArray);
+  return flattenArray;
+} // end function
+
+// MODULE: EXPORT
+module.exports = flatten;
+
+/* FUNCTIONS COPIED
 const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -42,29 +67,6 @@ const assertArraysEqual = (getArray1, getArray2) => {
   console.log(`✅✅✅ Assertion Passed: ${getArray1} === ${getArray2}`);
 } // end function
 
-
-// FUNCTION IMPLEMENTATION
-const flatten = getArray => {
-  // Create new flattened array for return
-  const flattenArray = [];
-  // Loop through passed array
-  for (let i = 0; i < getArray.length; i++) {
-    // Detect if an array is in the passed array
-    if (Array.isArray(getArray[i])) {
-      // Loop through the detected array and push to flatten array
-      for (let j = 0; j < getArray[i].length; j++) {
-        flattenArray.push(getArray[i][j]);
-      } // end for loop 2
-    // Anything that is not an array is still pushed to new flattened array
-    } else {
-      flattenArray.push(getArray[i]);
-    }
-  } // end for loop 1
-  // Print and return the new flattened array
-  // console.log(flattenArray);
-  return flattenArray;
-} // end function
-
 // Test cases
 console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
 console.log(flatten([1, [2, [3, [4]], 5]])); // => [1, 2, [3, [4]], 5] 
@@ -72,3 +74,4 @@ console.log(flatten([1, [2, [3, [4]], 5]])); // => [1, 2, [3, [4]], 5]
 // TEST CODE
 // assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 // assertArraysEqual(flatten([1, [2, [3, [4]], 5]]), [1, 2, [3, [4]], 5]);
+*/
