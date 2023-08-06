@@ -1,12 +1,15 @@
 // FUNCTION IMPLEMENTATION
 const middle = getArray => {
+  // Calculate the length array
   if (getArray.length <= 2) {
     // console.log([]);
     return [];
+  // Compute for odd number array
   } else if (getArray.length % 2 !== 0) {
     let median = ((getArray.length + 1) / 2) - 1; // -1 to adjust for zero-based index
     // console.log([getArray[median]]);
     return [getArray[median]];
+  // Compute for even number array
   } else if (getArray.length % 2 === 0) {
     let median1 = (getArray.length / 2) - 1; // -1 to adjust for zero-based index
     let median2 = ((getArray.length / 2) + 1) - 1; // -1 to adjust for zero-based index
