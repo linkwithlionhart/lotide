@@ -1,11 +1,8 @@
-// MODULE: REQUIRE
 const assertArraysEqual = require('../assertArraysEqual');
 const assert = require('chai').assert;
 const { describe } = require('mocha');
-// const assertEqual = require('../assertEqual');
-// const eqArrays = require('../eqArrays');
 
-// Write tests using chai's assert method
+// Apply tests
 describe("#assertArraysEqual", () => {
 
   it("returns true when comparing [1, 2, 3] with [1, 2, 3]", () => {
@@ -25,12 +22,3 @@ describe("#assertArraysEqual", () => {
   });
   
 });
-
-
-/*
-// Test code from assertArraysEqual.js
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // Expected: Assertion passed
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // Expected: Assertion failed
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // Expected: Assertion passed
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // Expected: Assertion failed
-*/

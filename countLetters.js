@@ -1,41 +1,36 @@
-// FUNCTION IMPORTED
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
-  }
-}
-
-// FUNCTION IMPLEMENTATION
-// Input: string - sentence
+/**
+ * Count the occurrences of each letter in a given sentence.
+ * @param {string} getSentence - The input sentence.
+ * @returns {object} An object where keys are letters from the sentence and values are their counts.
+ */
 const countLetters = getSentence => {
+  // Remove spaces from the sentence to only count letters.
   const newSentence = getSentence.split(' ').join('');
-  // console.log(processSentence);
+  
+  // An empty object to store the letters and their counts.
   let sentenceKey = {};
 
-  // Loop through the parameter and log keys
+  // Populate the sentenceKey object with keys for each unique letter.
+  // Initially, set the value of each letter to an empty string.
   for (letter of newSentence) {
     if (letter) {
       sentenceKey[letter] = '';
-      } // end if
-  } // end for loop
+    } 
+  }
 
-  // Loop through each letter of string array
+  // Iterate over each letter in the cleaned-up sentence.
   for (letter of newSentence) {
+    // If the letter already has a value in sentenceKey, increment it.
     if (sentenceKey[letter]) {
       sentenceKey[letter] += 1;
-     } else {
+    } else {
+      // If the letter doesn't have a value, initialize it to 1.
       sentenceKey[letter] = 1;
     }
-  } // end loop
+  }
   
-  // Output: multiple numbers - count of each letters in the string
+  // Return the final counts of each letter.
   return sentenceKey;
-  //return results;
-} // end function: countLetters 
+};
 
-// TEST CODE
-console.log(countLetters('LHL'));
-console.log(countLetters('lighthouse'));
-console.log(countLetters("lighthouse in the house"));
+module.exports = countLetters;

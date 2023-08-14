@@ -1,33 +1,27 @@
-// FUNCTION IMPLEMENTATION
+/**
+ * Compares two arrays for strict equality.
+ * This function checks if two arrays have the same length, and then
+ * checks if each corresponding pair of elements in the two arrays are equal.
+ * @param {Array} arr1 - The first array to be compared.
+ * @param {Array} arr2 - The second array to be compared.
+ * @returns {boolean} Returns `true` if the arrays are equal, otherwise returns `false`.
+ */
 const eqArrays = (arr1, arr2) => {
+  // Check if the lengths of both arrays are the same.
   if (arr1.length !== arr2.length) {
     return false;
   }
-  // Next, check each pair of elements
+
+  // Iterate over each element in the first array.
   for (let i = 0; i < arr1.length; i++) {
+    // Compare the current element of the first array with the corresponding element of the second array.
     if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
+
+  // If the loop completes without returning false, the arrays are equal.
   return true;
-} // end function: eqArrays
-
-// MODULE: EXPORT
-module.exports = eqArrays;
-
-/* Outdated
-// FUNCTIONS COPIED
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
 };
 
-// TEST CODE
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => should PASS
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => should PASS
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => should PASS
-*/
+module.exports = eqArrays;

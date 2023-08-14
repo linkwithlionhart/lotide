@@ -1,43 +1,21 @@
-// FUNCTION IMPLEMENTATION
+/**
+ * Finds the key associated with a given value in an object.
+ * Iterates through the object's key-value pairs and returns the key for the 
+ * provided value. If the value isn't found in the object, the function returns undefined.
+ * @param {object} getObject - The object to be searched.
+ * @param {any} getValue - The value to be searched for.
+ * @returns {string|undefined} The key associated with the given value, or undefined if the value is not found.
+ */
 const findKeyByValue = (getObject, getValue) => {
-  // Process - scan the object, read the value
+  // Iterate over each key-value pair in the object.
   for (const [key, value] of Object.entries(getObject)) {
-    // Output - return the key associated to the value
+    // If the current value matches the given value, return the corresponding key.
     if (value === getValue) {
-      // console.log(key);
       return key;
-    } // end if
-  } // end for loop
-  // Output - edge case: undefined
-  // console.log(undefined);
-  return undefined;
-} // end function: findKeyByValue
-
-// MODULE: EXPORT
-module.exports = findKeyByValue; 
-
-/* FUNCTION IMPORTED
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
+    }
   }
-}
-
-// Initialization
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
+  // If loop completes without finding the value, return undefined.
+  return undefined;
 };
 
-Challenge: It should scan the object and return the first key which contains the given value. 
-If no key with that given value is found, then it should return undefined.
-
-// Test code
-// findKeyByValue(bestTVShowsByGenre, "The Wire");
-// findKeyByValue(bestTVShowsByGenre, "That '70s Show");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-*/ 
+module.exports = findKeyByValue; 

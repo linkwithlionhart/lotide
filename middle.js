@@ -1,106 +1,27 @@
-// FUNCTION IMPLEMENTATION
+/**
+ * Returns the middle element(s) of an array.
+ * For arrays with a length of 1 or 2, the function returns an empty array.
+ * For arrays with an odd length, it returns a single middle element.
+ * For arrays with an even length, it returns two middle elements.
+ * @param {Array} getArray - The array to analyze.
+ * @returns {Array} An array containing the middle element(s) of the input array.
+ */
 const middle = getArray => {
-  // Calculate the length array
+  // If the array has a length of 1 or 2, return an empty array.
   if (getArray.length <= 2) {
-    // console.log([]);
     return [];
-  // Compute for odd number array
+  
+  // If the array has an odd length, return the single middle element.
   } else if (getArray.length % 2 !== 0) {
-    let median = ((getArray.length + 1) / 2) - 1; // -1 to adjust for zero-based index
-    // console.log([getArray[median]]);
+    let median = ((getArray.length + 1) / 2) - 1; // -1 to adjust for zero-based indexing
     return [getArray[median]];
-  // Compute for even number array
+
+  // If the array has an even length, return the two middle elements.
   } else if (getArray.length % 2 === 0) {
-    let median1 = (getArray.length / 2) - 1; // -1 to adjust for zero-based index
-    let median2 = ((getArray.length / 2) + 1) - 1; // -1 to adjust for zero-based index
-    // console.log([getArray[median1], getArray[median2]])
+    let median1 = (getArray.length / 2) - 1; // -1 to adjust for zero-based indexing
+    let median2 = ((getArray.length / 2) + 1) - 1; // -1 to adjust for zero-based indexing
     return [getArray[median1], getArray[median2]];
-  }
-} // end function 
-
-const assertArraysEqual = (arr1, arr2) => {
-  // Using eqArrays to check if arrays are equal
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-} // end function: assertArraysEqual
-
-const eqArrays = (arr1, arr2) => {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  // Next, check each pair of elements
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-} // end function: eqArrays
-
-// MODULE: EXPORT
-module.exports = middle;
-
-/* Redacted
-// FUNCTIONS COPIED
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-const eqArrays = (getArray1, getArray2) => {
-  if (getArray1.length !== getArray2.length) {
-    return false;
-  } // end if
-
-  for (let x = 0; x < getArray1.length; x++) {
-    for (let y = 0; y < getArray2.length; y++) {
-      if (x === y && getArray1[x] !== getArray2[y]) {
-        return false;
-      } // end if
-    } // end for loop 2
-  } // end for loop 1
-
-  return true;
-} // end function
-
-const assertArraysEqual = (getArray1, getArray2) => {
-  // Take two arrays and print a message
-  if (getArray1.length !== getArray2.length) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${getArray1} !== ${getArray2}`);
-    return;
-  } // end if
-
-  for (let x = 0; x < getArray1.length; x++) {
-    for (let y = 0; y < getArray2.length; y++) {
-      if (x === y && getArray1[x] !== getArray2[y]) {
-        console.log(`🛑🛑🛑 Assertion Failed: ${getArray1} !== ${getArray2}`);
-        return;
-      } // end if
-    } // end for loop 2
-  } // end for loop 1
-
-  console.log(`✅✅✅ Assertion Passed: ${getArray1} === ${getArray2}`);
-}
-
-
-// TEST CODE
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-
-middle([1]) // => []
-middle([1, 2]) // => []
-middle([1, 2, 3]) // => [2]
-middle([1, 2, 3, 4, 5]) // => [3]
-middle([1, 2, 3, 4]) // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
-*/
+module.exports = middle;

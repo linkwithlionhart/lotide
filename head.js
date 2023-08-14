@@ -1,32 +1,13 @@
-// FUNCTION IMPLEMENTATION
-// Refactored
+/**
+ * Retrieves the first element from an array.
+ * This function returns the first item of a given array. If the array is empty, 
+ * it will return `undefined` because of the behavior of accessing an undefined index in arrays.
+ * @param {Array} getArray - The array from which the first element will be retrieved.
+ * @returns {any} The first element of the provided array or `undefined` if the array is empty.
+ */
 const head = function (getArray) {
   return getArray[0];
-}
+};
 
-// MODULE: EXPORT
+
 module.exports = head;
-
-/* Outdated
-const head = function (getArray) {
-  for (let i = 0; i <= getArray.length; i++) {
-    if (getArray[0]) {
-      return getArray[0]
-    }
-  }
-}
-
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
-  }
-}
-
-// TEST CODE
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([1]), 1); // Array with one element
-assertEqual(head([]), undefined); // Empty array
-*/

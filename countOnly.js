@@ -1,51 +1,32 @@
-// FUNCTION IMPLEMENTATION
-// allItems: an array of strings that we need to look through
-// itemsToCount: an object specifying what to count
+/**
+ * Counts the occurrences of specific items in an array.
+ * This function iterates through an array of items and counts the occurrences
+ * of items that are specified within an object.
+ * @param {string[]} allItems - An array of strings to be counted.
+ * @param {object} itemsToCount - An object where keys represent the items to be counted, 
+ *                                and the value is `true` if the item should be counted.
+ * @returns {object} An object with the counted items as keys and their counts as values.
+ */
 const countOnly = function(allItems, itemsToCount) {
+  // An object to store the results.
   const results = {};
 
+  // Iterate over each item in the allItems array.
   for (const item of allItems) {
+    // Check if the current item is in the itemsToCount object with a truthy value.
     if (itemsToCount[item]) {
+      // If the item already exists in results, increment its count.
       if (results[item]) {
         results[item] += 1;
       } else {
+        // If the item doesn't exist in results, initialize its count to 1.
         results[item] = 1;
       }
-    } // end if
-  } // end loop
-  // Return: count of instances each string were found in allItems array
-  // Return report on all strings found in the input array and their respective count
+    }
+  }
+  
+  // Return the final counts of the specified items.
   return results;
-} // end function
+};
 
 module.exports = countOnly;
-
-/* FUNCTIONS COPIED
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
-  }
-}
-
-// TEST CODE
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
-
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
-
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
-*/

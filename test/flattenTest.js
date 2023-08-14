@@ -1,4 +1,3 @@
-// MODULE: REQUIRE
 const flatten = require('../flatten.js');
 const { describe } = require('mocha');
 const assert = require('chai').assert;
@@ -19,7 +18,3 @@ describe('#flatten', () => {
   });
 
 });
-
-// Test code from flatten.js
-// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-// assertArraysEqual(flatten([1, [2, [3, [4]], 5]]), [1, 2, [3, [4]], 5]);

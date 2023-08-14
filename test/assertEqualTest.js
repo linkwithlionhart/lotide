@@ -1,8 +1,8 @@
-// MODULE: REQUIRE
 const assertEqual = require('../assertEqual');
 const assert = require('chai').assert;
 const { describe } = require('mocha');
 
+// Apply tests
 describe("#assertEqual", () => {
   
   let consoleOutput = [];
@@ -43,11 +43,3 @@ describe("#assertEqual", () => {
   });
 
 });
-
-/*
-// Test code from AssertEqual.js
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual('😀', '😀');
-assertEqual('😀', '😂');
-*/ 

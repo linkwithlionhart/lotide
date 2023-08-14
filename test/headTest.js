@@ -1,8 +1,6 @@
-// MODULE: REQUIRE
 const head = require('../head');
 const assert = require('chai').assert;
 const { describe } = require('mocha');
-// const assertEqual = require('../assertEqual');
 
 // Apply tests
 describe("#head", () => {
@@ -16,11 +14,3 @@ describe("#head", () => {
   });
   
 });
-
-/*
-// Test code from head.js
-assertEqual(head([5,6,7]), 5);
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
-assertEqual(head([1]), 1); // Array with one element
-assertEqual(head([]), undefined); // Empty array
-*/
