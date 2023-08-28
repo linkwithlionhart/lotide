@@ -28,4 +28,22 @@ describe('#eqObjects', () => {
     assert.isFalse(eqObjects(multiColorShirtObject, longSleeveMultiColorShirtObject));
   });
 
+  it('returns true for equal objects', () => {
+    const object1 = { a: { z: 1 }, b: 2 };
+    const object2 = { a: { z: 1 }, b: 2 };
+    assert.isTrue(eqObjects(object1, object2));
+  });
+
+  it('returns false for unequal objects', () => {
+    const object1 = { a: { y: 0, z: 1 }, b: 2 };
+    const object2 = { a: { z: 1 }, b: 2 };
+    assert.isFalse(eqObjects(object1, object2));
+  });
+
+  it('returns false for objects with different structures', () => {
+    const object1 = { a: { y: 0, z: 1 }, b: 2 };
+    const object2 = { a: 1, b: 2 };
+    assert.isFalse(eqObjects(object1, object2));
+  });
+
 });
