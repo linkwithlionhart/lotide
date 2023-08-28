@@ -15,7 +15,7 @@ This project was created and published by me as part of my learnings at Lighthou
 
 **Require it:**
 ```javascript
-const _ = require('linkwithlionhart/lotide');
+const _ = require('@linkwithlionhart/lotide');
 ```
 
 **Call it:**
