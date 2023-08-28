@@ -30,7 +30,13 @@ const eqObjects = function(object1, object2) {
       if (!eqArrays(value1, value2)) {
         return false;
       }
-    } else if (value1 !== value2) { // If values are not arrays, do a simple comparison.
+    } else if (typeof value1 === "object" && typeof value2 === "object" 
+    && value1 !== null && value2 !== null) {
+      // Recursive call.
+      if (!eqObjects(value1, value2)) {
+        return false;
+      } 
+    } else if (value1 !== value2) {
       return false;
     }
   }
