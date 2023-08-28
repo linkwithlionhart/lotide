@@ -21,4 +21,16 @@ describe('#eqArrays', () => {
     assert.strictEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
   });
   
+  it('should return true for two identical nested arrays', () => {
+    assert.isTrue(eqArrays([[2, 3], [4]], [[2, 3], [4]]));
+  });
+
+  it('should return false for two nested arrays with different inner array lengths', () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
+  });
+
+  it('should return false for nested arrays where one inner array is compared with a number', () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], 4]));
+  });
+
 });
