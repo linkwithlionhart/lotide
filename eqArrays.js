@@ -14,8 +14,14 @@ const eqArrays = (arr1, arr2) => {
 
   // Iterate over each element in the first array.
   for (let i = 0; i < arr1.length; i++) {
+    // If the current element in both arrays are arrays, use recursion.
+    if (Array.isArray(arr1[i]) && Array.isArray(arr2[i])) {
+      // Recursive call.
+      if (!eqArrays(arr1[i], arr2[i])) {
+        return false;
+      }
     // Compare the current element of the first array with the corresponding element of the second array.
-    if (arr1[i] !== arr2[i]) {
+    } else if (arr1[i] !== arr2[i]) {
       return false;
     }
   }
